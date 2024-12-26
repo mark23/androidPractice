@@ -25,7 +25,9 @@ fun TopScreen(
 
     Scaffold(modifier = Modifier.fillMaxSize(),)
     { innerPadding ->
-        Column(modifier = Modifier.padding(innerPadding),
+        Column(modifier = Modifier
+            .padding(innerPadding)
+            .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally) {
             Text("TopScreen")
