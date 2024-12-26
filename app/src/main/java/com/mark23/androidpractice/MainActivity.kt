@@ -16,6 +16,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.mark23.androidpractice.ui.Next
 import com.mark23.androidpractice.ui.NextScreen
+import com.mark23.androidpractice.ui.Recom
+import com.mark23.androidpractice.ui.RecomScreen
 import com.mark23.androidpractice.ui.Top
 import com.mark23.androidpractice.ui.TopScreen
 import com.mark23.androidpractice.ui.theme.AndroidPracticeTheme
@@ -33,10 +35,15 @@ class MainActivity : ComponentActivity() {
                     startDestination = Top,
                 ) {
                     composable<Top> {
-                        TopScreen(onBack = {}, onNextScreen = { navController.navigate(route = Next)})
+                        TopScreen(onBack = {},
+                            onNextScreen = { navController.navigate(route = Next)},
+                            onRecomScreen = { navController.navigate(route = Recom)})
                     }
                     composable<Next> {
                         NextScreen(onBack = { navController.popBackStack() })
+                    }
+                    composable<Recom> {
+                        RecomScreen(onBack = { navController.popBackStack()})
                     }
                 }
             }

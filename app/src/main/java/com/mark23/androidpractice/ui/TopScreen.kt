@@ -21,6 +21,7 @@ object Top
 fun TopScreen(
     onBack: () -> Unit,
     onNextScreen: () -> Unit,
+    onRecomScreen: () -> Unit,
 ) {
 
     Scaffold(modifier = Modifier.fillMaxSize(),)
@@ -37,6 +38,12 @@ fun TopScreen(
                 onNextScreen()
             }) {
                 Text("nextScreen")
+            }
+
+            Button(onClick = dropUnlessResumed {
+                onRecomScreen()
+            }) {
+                Text("RecomScreen")
             }
         }
     }
